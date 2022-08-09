@@ -1,38 +1,221 @@
-.App {
-  text-align: center;
+/* Global */
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.font {
+  font-family: "Sahitya,serif" !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* Header */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0px !important;
+  padding: 0px 10px 0px 10px;
+  height: 70px;
+  position: sticky;
+  top: 0px;
+  z-index: 1;
+}
+
+.logo-image {
+  width: 100px;
+  height: 50px;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav > a {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 22px;
+  width: 100px;
+  border-bottom: 4px solid transparent;
 }
 
-.App-link {
-  color: #61dafb;
+.nav > a:hover {
+  border-bottom: 4px solid rgb(200, 194, 194);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.nav > .active {
+  border-bottom: 4px solid black;
+}
+
+.nav > a > h4 {
+  margin-left: 5px;
+}
+
+.drawer-list {
+  color: black;
+}
+
+.drawer {
+  display: none;
+}
+
+/* Section */
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 498px;
+}
+
+/* Home */
+
+.home {
+  display: flex;
+  min-height: 498px;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  background-image: url("./images/bg-image.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 50px;
+}
+
+.card {
+  flex: 1;
+  margin: 10px;
+}
+
+/* Shoes */
+
+.shoes {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Shoes List */
+.shoes-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.shoes-list-card {
+  width: 350px;
+  min-height: 260px;
+  margin: 10px;
+}
+
+.add-to-cart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Selected Shoe */
+.selected-shoe {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.selected-shoe-card {
+  display: flex;
+  margin: 10px;
+}
+
+.card-action {
+  flex: 2;
+}
+
+.card-content {
+  flex: 1;
+}
+
+/* Cart */
+
+.cart-container {
+  width: 90%;
+  flex-grow: 1;
+}
+
+.cart-section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cart-history,
+.cart-summery {
+  margin: 20px;
+}
+
+.cart-history {
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+}
+
+.cart-history > :nth-child(even) {
+  margin: 10px 0px 10px 0px;
+}
+
+.cart-history-flex {
+  display: flex;
+}
+
+.cart-history-flex > :nth-child(odd) {
+  flex: 1;
+}
+
+.cart-history-flex > :nth-child(even) {
+  flex: 2;
+}
+
+.cart-summery {
+  flex: 1;
+}
+
+.flexing {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.flex1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Responsive */
+
+@media (max-width: 650px) {
+  .drawer {
+    display: inline-block;
   }
-  to {
-    transform: rotate(360deg);
+  .nav {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .home {
+    flex-direction: column;
+  }
+  .card {
+    width: 100%;
+  }
+  .selected-shoe-card {
+    flex-direction: column;
   }
 }
